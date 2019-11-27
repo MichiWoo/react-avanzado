@@ -46,9 +46,10 @@ export const ListOfCategories = () => {
   )
 
   return (
-    <>
+    // eslint-disable-next-line react/jsx-fragments
+    <Fragment>
       {renderList()}
       {showFixed && renderList(true)}
-    </>
+    </Fragment>
   )
 }
