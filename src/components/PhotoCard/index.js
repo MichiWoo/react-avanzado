@@ -18,7 +18,7 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
       {
         // eslint-disable-next-line react/jsx-fragments
         show && <Fragment>
-          <a href={`/detail/${id}`}>
+          <a href={`/?detail=${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
