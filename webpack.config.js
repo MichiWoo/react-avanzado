@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/' // Para que busque el app.bundle en la raiz
   },
   plugins: [
     new HtmlWebpackPlugin({
