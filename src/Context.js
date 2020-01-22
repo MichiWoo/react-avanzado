@@ -1,14 +1,13 @@
-import React, { createContext, useState } from 'react'
+import React, { useState, createContext } from 'react'
+
 const Context = createContext()
 
 const Provider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false)
-
   const value = {
     isAuth,
-    activateAuth: () => {
-      setIsAuth(true)
-    }
+    activateAuth: () => setIsAuth(true),
+    deActivateAuth: () => setIsAuth(false)
   }
   return (
     <Context.Provider value={value}>
@@ -16,6 +15,7 @@ const Provider = ({ children }) => {
     </Context.Provider>
   )
 }
+
 export default {
   Provider,
   Consumer: Context.Consumer
