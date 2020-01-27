@@ -4,13 +4,25 @@
 import React, { Fragment } from 'react'
 import Context from '../Context'
 import { UserForm } from '../components/UseForm'
+import { RegisterMutation } from '../container/RegisterMutation'
 
 export const NotRegisterUser = () => (
   <Context.Consumer>
     {
       ({ activateAuth }) => {
         return <Fragment>
-          <UserForm title='Iniciar Sesión' onSubmit={activateAuth} />
+          <RegisterMutation>
+            {
+              (register) => {
+                const onSubmit = ({ email, password }) => {
+                  const input = { email, password }
+                  const variables = { input }
+                  register({ variables }).then(activateAuth)
+                }
+                return <UserForm title='Iniciar Sesión' onSubmit={onSubmit} />
+              }
+            }
+          </RegisterMutation>
           <UserForm title='Registrarse' onSubmit={activateAuth} />
         </Fragment>
       }
