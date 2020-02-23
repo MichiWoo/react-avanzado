@@ -1,7 +1,12 @@
-import React from 'react'
+/* eslint-disable react/jsx-fragments */
+import React, { Fragment } from 'react'
+import { FavsWithQuery } from '../container/GetFavorites'
 
 export const Favs = () => {
   return (
-    <h1>Favs</h1>
+    <Fragment>
+      <h1>Favs</h1>
+      <FavsWithQuery />
+    </Fragment>
   )
 }
