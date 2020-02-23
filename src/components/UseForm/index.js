@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-fragments */
 import React, { Fragment } from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
-import { Form, Input, Button, Title, Error } from './styles'
+import { Form, Input, Title, Error } from './styles'
+import { SubmitButton } from '../SubmitButton'
 
 export const UserForm = ({ error, disabled, onSubmit, title }) => {
   const email = useInputValue('')
@@ -18,7 +19,7 @@ export const UserForm = ({ error, disabled, onSubmit, title }) => {
         <Title>{title}</Title>
         <Input disabled={disabled} placeholder='email' {...email} />
         <Input disabled={disabled} placeholder='password' type='password' {...password} />
-        <Button disabled={disabled}>{title}</Button>
+        <SubmitButton disabled={disabled}>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}
     </Fragment>
