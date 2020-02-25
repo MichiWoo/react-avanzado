@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable react/jsx-fragments */
-import React, { useContext } from 'react'
+import React, { useContext, Suspense } from 'react'
 import { Router, Redirect } from '@reach/router'
 import { Context } from './Context'
 
@@ -14,12 +14,14 @@ import { Logo } from './components/Logo'
 import { NavBar } from './components/NavBar'
 import { Home } from './pages/Home'
 import { Detail } from './pages/Detail'
-import { Favs } from './pages/Favs'
+// import { Favs } from './pages/Favs'
+
+const Favs = React.lazy(() => import('./pages/Favs'))
 
 export const App = () => {
   const { isAuth } = useContext(Context)
   return (
-    <div>
+    <Suspense fallback={<div />}>
       <GlobalStyle />
       <Logo />
       <Router>
@@ -34,6 +36,6 @@ export const App = () => {
         <User path='/user' />
       </Router>
       <NavBar />
-    </div>
+    </Suspense>
   )
 }
