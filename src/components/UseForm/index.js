@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-fragments */
 import React, { Fragment } from 'react'
-import { useInputValue } from '../../hooks/useInputValue'
+import { useInputValue } from '../../hooks/UseInputValue'
 import { Form, Input, Title, Error } from './styles'
 import { SubmitButton } from '../SubmitButton'
 
