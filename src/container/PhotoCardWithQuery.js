@@ -1,5 +1,5 @@
 import React from 'react'
-import { PhotoCard } from '../components/photoCard'
+import { PhotoCard } from '../components/PhotoCard'
 import { gql } from 'apollo-boost'// permite hacer las queries como si fuera un string
 import { Query } from 'react-apollo'// permite utilizar render props
 
